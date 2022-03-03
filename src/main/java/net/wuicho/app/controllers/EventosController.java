@@ -41,14 +41,13 @@ public class EventosController {
 	
 	@GetMapping("/form")
 	public String showEventForm(Evento evento) {
-		
 		return "eventosForm";
 	}
 	
 	@PostMapping
 	public String createEvento(Evento evento) {
-		repository.insert(evento);
-		return "redirect:/lista";
+		repository.save(evento);
+		return "redirect:/";
 	}
 	
 }

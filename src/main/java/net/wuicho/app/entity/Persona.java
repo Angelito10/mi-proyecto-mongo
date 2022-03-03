@@ -19,9 +19,7 @@ public class Persona implements Serializable{
 	private String apellidoMaterno;
 	private String direccion;
 	private String tel;
-	
-	
-	
+
 	public String getId() {
 		return id;
 	}
@@ -58,13 +56,5 @@ public class Persona implements Serializable{
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }

@@ -66,8 +66,4 @@ public class Evento implements Serializable {
 		this.persona = persona;
 	}
 	
-	
-	
-	
-	
 }
