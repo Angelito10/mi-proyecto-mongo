@@ -1,29 +1,24 @@
-package com.example.demo.controllers;
+package net.wuicho.app.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.repositorys.IeventoRepository;
-
-import lombok.AllArgsConstructor;
+import net.wuicho.app.repository.IEventoRepository;
 
 @Controller
-@RequestMapping("/lista")
-@AllArgsConstructor
 public class EventosController {
 
+	private IEventoRepository repository;
 	
-	
-    @Autowired
-	private IeventoRepository repository;
+	@Autowired
+	public EventosController(IEventoRepository repository) {
+		this.repository = repository;
+	}
 	
 	@GetMapping
 	public String showEventosList(Model model) {
-		
 		model.addAttribute("eventos", repository.findAll());
 		return "eventosList";
 	}

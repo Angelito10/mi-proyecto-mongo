@@ -1,4 +1,4 @@
-package com.example.entity;
+package net.wuicho.app.entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -6,12 +6,10 @@ import java.time.LocalDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 @Document
 public class Evento implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	private String id;
@@ -22,15 +20,11 @@ public class Evento implements Serializable {
 	private Double precio;
 	private Persona persona;
 	
-	
-	
-	
-	
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
-		id = id;
+		this.id = id;
 	}
 	public String getNombreEvento() {
 		return nombreEvento;

@@ -1,19 +1,17 @@
-package com.example.entity;
+package net.wuicho.app.entity;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import lombok.Data;
 
 import org.springframework.data.annotation.Id;
 
 
 @Document
 public class Persona implements Serializable{
-
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	private String id;
 	private String nombre;
