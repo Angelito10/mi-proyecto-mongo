@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import net.wuicho.app.entity.Evento;
 import net.wuicho.app.entity.Persona;
@@ -16,7 +15,6 @@ import net.wuicho.app.repository.IEventoRepository;
 import net.wuicho.app.repository.IPersonaRepository;
 
 @Controller
-@RequestMapping("/lista")
 public class EventosController {
 
 	private IEventoRepository repository;
@@ -29,8 +27,6 @@ public class EventosController {
 		this.repository = repository;
 		this.personaRepository = personaRepository;
 	}
-	
-	
 	
 	@ModelAttribute("personas")
 	public List<Persona> personas(){
@@ -51,7 +47,6 @@ public class EventosController {
 	
 	@PostMapping
 	public String createEvento(Evento evento) {
-		
 		repository.insert(evento);
 		return "redirect:/lista";
 	}
