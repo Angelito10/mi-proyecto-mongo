@@ -5,6 +5,7 @@ import java.time.LocalDate;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Document
 public class Evento implements Serializable {
@@ -15,6 +16,8 @@ public class Evento implements Serializable {
 	private String id;
 	private String nombreEvento;
 	private String descripcion;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fecha;
 	private String hora;
 	private Double precio;
